@@ -2,7 +2,7 @@
 
 ## dubbo 结构图：
 
-![](https://images2018.cnblogs.com/blog/137084/201805/137084-20180509141113869-2056605601.png)
+![](http://dubbo.apache.org/docs/zh-cn/user/sources/images/dubbo-architecture.jpg)
 
 ## dubbo 整体结构图：
 

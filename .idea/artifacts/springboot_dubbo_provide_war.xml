@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springboot-dubbo-provide:war">
+    <output-path>$PROJECT_DIR$/springboot-dubbo-provide/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>springboot-dubbo-provide</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="springboot-dubbo-provide-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="springboot-dubbo-provide:war exploded" />
+    </root>
+  </artifact>
+</component>

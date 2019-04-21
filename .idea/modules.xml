@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-api/springboot-dubbo-api.iml" filepath="$PROJECT_DIR$/springboot-dubbo-api/springboot-dubbo-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-consumer/springboot-dubbo-consumer.iml" filepath="$PROJECT_DIR$/springboot-dubbo-consumer/springboot-dubbo-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/springboot-dubbo-provide.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/springboot-dubbo-provide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/springboot-dubbo-sample.iml" filepath="$PROJECT_DIR$/.idea/springboot-dubbo-sample.iml" />
+    </modules>
+  </component>
+</project>

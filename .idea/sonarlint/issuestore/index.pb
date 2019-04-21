@@ -1,0 +1,21 @@
+
+s
+Cspringboot-dubbo-provide/src/main/com/mxy/provide/domain/Goods.java,8\a\8acb85b49af6f98a82ae537ee9256effea6b43b9
+f
+6springboot-dubbo-consumer/src/Resource/application.yml,3\e\3e6b32672873361522034be6e16f14c8f2f5d437
+Ç
+Rspringboot-dubbo-provide/src/main/com/mxy/provide/facade/Impl/GoodsFacadeImpl.java,1\d\1df50e195fd8d07d8693ce85a89bf515ee30de31
+Å
+Qspringboot-dubbo-consumer/src/main/com/mxy/consumer/DubboConsumerApplication.java,0\6\0625a6274dd4be4eb8278c523ed36cb1be790198
+Ñ
+Tspringboot-dubbo-consumer/src/main/com/mxy/consumer/facade/Impl/OrderFacadeImpl.java,a\8\a867afb15f0433da4cae6be771b47de69fd612b4
+r
+Bspringboot-dubbo-api/src/main/com/mxy/api/facade/dto/GoodsDto.java,a\2\a20d42860f11e51f86d5edea48374f31cb966967
+q
+Aspringboot-dubbo-api/src/main/com/mxy/api/facade/GoodsFacade.java,b\2\b2be3303cbbbf89709b4b78e09dc9849345d095b
+P
+ springboot-dubbo-provide/pom.xml,e\a\eaaecc011f256646f21d723e6b117855c5f009c5
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

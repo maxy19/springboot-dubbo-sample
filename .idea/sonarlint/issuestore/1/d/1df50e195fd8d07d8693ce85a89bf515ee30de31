@@ -1,0 +1,4 @@
+
+Ssquid:S1611("7Remove the parentheses around the "goodsList" parameter(áªïÝúÿÿÿÿ
+Zsquid:S1596#">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(÷ƒ¨öúÿÿÿÿ
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§ò‹çøÿÿÿÿ

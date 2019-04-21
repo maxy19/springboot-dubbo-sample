@@ -15,8 +15,6 @@ import org.springframework.util.CollectionUtils;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -34,6 +32,20 @@ public class OrderFacadeImpl implements OrderFacade {
     @Override
     public List<Order> getOrderListByOrderId(Long id) {
 
+        List<GoodsDto> goodsDtoList = asyncCall(id);
+        if (CollectionUtils.isEmpty(goodsDtoList)) {
+            return Collections.EMPTY_LIST;
+        }
+
+        return Lists.newArrayList(new Order(id, 100D, convert.apply(goodsDtoList)));
+    }
+
+    /**
+     * dubbo 异步调用方式
+     * @param id
+     * @return
+     */
+    private List<GoodsDto> asyncCall(Long id) {
         Future<List<GoodsDto>> listFuture = RpcContext.getContext().asyncCall(new Callable<List<GoodsDto>>() {
             @Override
             public List<GoodsDto> call() throws Exception {
@@ -44,16 +56,10 @@ public class OrderFacadeImpl implements OrderFacade {
 
         try {
             goodsDtoList = listFuture.get();
-        } catch (InterruptedException e) {
-            log.error("throw InterruptedException ",e);
-        } catch (ExecutionException e) {
-            log.error("throw ExecutionException ",e);
+        } catch (Exception e) {
+            log.error(" asynch call throw Exception ",e);
         }
-        if (CollectionUtils.isEmpty(goodsDtoList)) {
-            return Collections.EMPTY_LIST;
-        }
-
-        return Lists.newArrayList(new Order(id, 100D, convert.apply(goodsDtoList)));
+        return goodsDtoList;
     }
 
     private Function<List<GoodsDto>, List<Goods>> convert = (goodsList) ->

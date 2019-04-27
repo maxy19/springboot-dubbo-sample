@@ -6,12 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot-dubbo-provide" />
+        <module name="load-balance-service1" />
+        <module name="load-balance-service2" />
+        <module name="load-balance-service3" />
         <module name="springboot-dubbo-api" />
         <module name="springboot-dubbo-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="load-balance" target="1.8" />
+      <module name="load-balance-service1" target="1.8" />
+      <module name="load-balance-service2" target="1.8" />
+      <module name="load-balance-service3" target="1.8" />
       <module name="springboot-dubbo-api" target="1.8" />
       <module name="springboot-dubbo-consumer" target="1.8" />
       <module name="springboot-dubbo-provide" target="1.8" />
@@ -20,6 +26,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="load-balance" options="-parameters" />
+      <module name="load-balance-service1" options="-parameters" />
+      <module name="load-balance-service2" options="-parameters" />
+      <module name="load-balance-service3" options="-parameters" />
       <module name="springboot-dubbo-api" options="-parameters" />
       <module name="springboot-dubbo-consumer" options="-parameters" />
       <module name="springboot-dubbo-provide" options="-parameters" />

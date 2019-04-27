@@ -1,0 +1,15 @@
+server:
+  port: 7778
+
+dubbo:
+  application:
+    ##### 注册服务的名称
+    name: order
+  ##### 注册中心地址
+  registry:
+    address: zookeeper://localhost:2181
+
+spring:
+  output:
+    ansi:
+      enabled: always

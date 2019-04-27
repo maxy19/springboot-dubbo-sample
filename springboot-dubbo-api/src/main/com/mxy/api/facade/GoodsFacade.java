@@ -7,4 +7,5 @@ import java.util.List;
 public interface GoodsFacade {
 
     List<GoodsDto> getGoodsByOrderId(Long orderId);
+
 }

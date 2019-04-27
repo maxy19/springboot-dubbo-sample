@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="load-balance-service1:war">
+    <output-path>$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service1/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>load-balance-service1</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="load-balance-service1-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="load-balance-service1:war exploded" />
+    </root>
+  </artifact>
+</component>

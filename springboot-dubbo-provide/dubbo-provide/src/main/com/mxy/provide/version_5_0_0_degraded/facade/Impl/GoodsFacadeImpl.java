@@ -1,6 +1,5 @@
-package com.mxy.provide.version_4_0_0_cache.facade.Impl;
+package com.mxy.provide.version_5_0_0_degraded.facade.Impl;
 
-import com.alibaba.dubbo.common.extension.Activate;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -16,7 +15,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@Service(version = "4.0.0")
+@Service(version = "5.0.0")
 public class GoodsFacadeImpl implements GoodsFacade {
 
     private Map<Long, List<Goods>> cacheMap = Maps.newHashMap();

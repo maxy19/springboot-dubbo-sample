@@ -1,7 +1,6 @@
-package com.mxy.consumer.version_4_0_0_cache.facade.Impl;
+package com.mxy.consumer.version_5_0_0_degraded.facade.Impl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
 import com.mxy.api.facade.GoodsFacade;
 import com.mxy.api.facade.dto.GoodsDto;
@@ -14,7 +13,6 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -24,23 +22,17 @@ public class OrderFacadeImpl implements OrderFacade {
 
 
     /**
-     * 1. lru 基于最近最少使用原则删除多余缓存，保持最热的数据被缓存。
-     * 2. threadlocal 当前线程缓存，比如一个页面渲染，用到很多 portal，每个 portal 都要去查用户信息，通过线程缓存，可以减少这种多余访问。
-     * 3. jcache 与 JSR107 集成，可以桥接各种缓存实现。
+     * 1.mock=force:return+null 表示消费方对该服务的方法调用都直接返回 null 值，不发起远程调用。用来屏蔽不重要服务不可用时对调用方的影响。
+     * 2.mock=fail:return+null 表示消费方对该服务的方法调用在失败后，再返回 null 值，不抛异常。用来容忍不重要服务不稳定时对调用方的影响。
+     * 3.如果配置为true，则缺省使用mock类名，即类名+Mock后缀，但该类要和暴露的服务路径相同，没有这个类，项目启动时会报Class Not Found 错误
      */
-    @Reference(check = false, timeout = 4000, version = "4.0.0", cache = "lru")
+    //第三种调用api包下的xxxMock方法 其他另种在当前版本2.6.2似乎有bug 返回依然报错
+    @Reference(check = false, timeout = 4000, version = "5.0.0",mock ="true")
     private GoodsFacade goodsFacade;
 
     @Override
     public List<Order> getOrderListByOrderId(Long id) {
-        List<GoodsDto> goodsDtoList = Lists.newArrayList();
-        for (int i = 0; i <2; i++) {
-            Stopwatch stopwatch = Stopwatch.createStarted();
-            goodsDtoList = goodsFacade.getGoodsByOrderId(id);
-            stopwatch.stop();
-            //第二次访问花费0毫秒
-            log.info("花费时间 = {} ", stopwatch.elapsed(TimeUnit.MILLISECONDS));
-        }
+        List<GoodsDto> goodsDtoList  = goodsFacade.getGoodsByOrderId(id);
         if (CollectionUtils.isEmpty(goodsDtoList)) {
             return Collections.emptyList();
         }

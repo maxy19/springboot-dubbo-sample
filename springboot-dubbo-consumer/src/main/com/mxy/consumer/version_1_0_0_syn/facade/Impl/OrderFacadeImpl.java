@@ -25,12 +25,12 @@ public class OrderFacadeImpl implements OrderFacade {
     public List<Order> getOrderListByOrderId(Long id) {
         List<GoodsDto> goodsDtoList = goodsFacade.getGoodsByOrderId(id);
         if (CollectionUtils.isEmpty(goodsDtoList)) {
-            return Collections.EMPTY_LIST;
+            return Collections.emptyList();
         }
         return Lists.newArrayList(new Order(id, 100D, convert.apply(goodsDtoList)));
     }
 
-    private Function<List<GoodsDto>, List<Goods>> convert = (goodsList) ->
+    private Function<List<GoodsDto>, List<Goods>> convert = goodsList ->
             goodsList.stream().map(c ->
                     new Goods(c.getGoodsName(), c.getGoodsColor(), c.getQutity())
             ).collect(Collectors.toList());

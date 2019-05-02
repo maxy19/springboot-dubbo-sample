@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service1/load-balance-service1.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service1/load-balance-service1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service2/load-balance-service2.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service2/load-balance-service2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service3/load-balance-service3.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service3/load-balance-service3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/dubbo-provide/dubbo-provide.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/dubbo-provide/dubbo-provide.iml" group="springboot-dubbo-provide and modules" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance.iml" group="springboot-dubbo-provide and modules/load-balance and modules" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service1/load-balance-service1.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service1/load-balance-service1.iml" group="springboot-dubbo-provide and modules/load-balance and modules" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service2/load-balance-service2.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service2/load-balance-service2.iml" group="springboot-dubbo-provide and modules/load-balance and modules" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service3/load-balance-service3.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service3/load-balance-service3.iml" group="springboot-dubbo-provide and modules/load-balance and modules" />
       <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-api/springboot-dubbo-api.iml" filepath="$PROJECT_DIR$/springboot-dubbo-api/springboot-dubbo-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-consumer/springboot-dubbo-consumer.iml" filepath="$PROJECT_DIR$/springboot-dubbo-consumer/springboot-dubbo-consumer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/springboot-dubbo-provide.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/springboot-dubbo-provide.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/springboot-dubbo-sample.iml" filepath="$PROJECT_DIR$/.idea/springboot-dubbo-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-provide/springboot-dubbo-provide.iml" filepath="$PROJECT_DIR$/springboot-dubbo-provide/springboot-dubbo-provide.iml" group="springboot-dubbo-provide and modules" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/think-for-springboot-dubbo-sample.iml" filepath="$PROJECT_DIR$/.idea/think-for-springboot-dubbo-sample.iml" />
     </modules>
   </component>
 </project>

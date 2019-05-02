@@ -1,17 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="load-balance-service2:war exploded">
-    <output-path>$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service2/target/load-balance-service2-1.0-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="dubbo-provide:war exploded">
+    <output-path>$PROJECT_DIR$/springboot-dubbo-provide/dubbo-provide/target/dubbo-provide-1.0-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>load-balance-service2</module>
+        <module>dubbo-provide</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="load-balance-service2" />
+          <element id="module-output" name="dubbo-provide" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="springboot-dubbo-api-1.0-SNAPSHOT.jar">
@@ -70,9 +70,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service2/target/load-balance-service2-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/springboot-dubbo-provide/dubbo-provide/target/dubbo-provide-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="load-balance-service2/web/Web" />
+      <element id="javaee-facet-resources" facet="dubbo-provide/web/Web" />
     </root>
   </artifact>
 </component>

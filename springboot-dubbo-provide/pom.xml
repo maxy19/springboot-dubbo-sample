@@ -13,6 +13,7 @@
     <name>springboot-dubbo-provide</name>
     <modules>
         <module>load-balance</module>
+        <module>dubbo-provide</module>
     </modules>
 
     <dependencies>

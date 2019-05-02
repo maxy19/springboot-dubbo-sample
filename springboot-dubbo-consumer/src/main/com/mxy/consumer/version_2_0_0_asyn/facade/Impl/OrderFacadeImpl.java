@@ -34,7 +34,7 @@ public class OrderFacadeImpl implements OrderFacade {
 
         List<GoodsDto> goodsDtoList = asyncCall(id);
         if (CollectionUtils.isEmpty(goodsDtoList)) {
-            return Collections.EMPTY_LIST;
+            return Collections.emptyList();
         }
 
         return Lists.newArrayList(new Order(id, 100D, convert.apply(goodsDtoList)));
@@ -62,7 +62,7 @@ public class OrderFacadeImpl implements OrderFacade {
         return goodsDtoList;
     }
 
-    private Function<List<GoodsDto>, List<Goods>> convert = (goodsList) ->
+    private Function<List<GoodsDto>, List<Goods>> convert = goodsList ->
             goodsList.stream().map(c ->
                     new Goods(c.getGoodsName(), c.getGoodsColor(), c.getQutity())
             ).collect(Collectors.toList());

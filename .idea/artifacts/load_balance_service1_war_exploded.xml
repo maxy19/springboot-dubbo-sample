@@ -66,6 +66,7 @@
           <element id="library" level="project" name="Maven: com.alibaba.boot:dubbo-spring-boot-autoconfigure:0.2.0" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.57" />
           <element id="library" level="project" name="Maven: net.sf.trove4j:core:3.1.0" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.6" />
         </element>
       </element>
       <element id="directory" name="META-INF">

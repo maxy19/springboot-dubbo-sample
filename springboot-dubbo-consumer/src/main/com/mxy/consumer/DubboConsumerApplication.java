@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 测试事件回调时候 注释掉@EnableDubbo
  */
-@EnableDubbo(scanBasePackages = "com.mxy.consumer.version_6_0_0_callback")
-@SpringBootApplication(scanBasePackages = "com.mxy.consumer.version_6_0_0_callback")
+@EnableDubbo(scanBasePackages = "com.mxy.consumer.version_7_0_0_concurrent")
+@SpringBootApplication(scanBasePackages = "com.mxy.consumer.version_7_0_0_concurrent")
 public class DubboConsumerApplication {
     public static void main(String[] args) {
         SpringApplication.run(DubboConsumerApplication.class, args);

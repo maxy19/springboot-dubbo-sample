@@ -9,25 +9,32 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * LeastActive LoadBalance
- * 最少活跃调用数，相同活跃数的随机，活跃数指调用前后计数差。
- * 使慢的提供者收到更少请求，因为越慢的提供者的调用前后计数差会越大。
+ * 配置服务的客户端的loadbalance属性为 leastactive，此 Loadbalance 会调用并发数最小的
  */
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = DubboConsumerApplicationTest.class)
 public class LeastActiveInvokeTest {
 
-    @Reference(version = "3.2.0",loadbalance = "leastactive")
+    @Reference(version = "3.2.0", loadbalance = "leastactive")
     private HealthCheckFacade healthCheckFacade;
 
     @Test
     public void test() {
-        for (int i = 0; i < 50; i++) {
-            log.info(healthCheckFacade.invoke());
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        for (int i = 0; i < 1000; i++) {
+            executorService.submit(new Runnable() {
+                @Override
+                public void run() {
+                    log.info(healthCheckFacade.invoke());
+                }
+            });
         }
     }
-
-
 }
+

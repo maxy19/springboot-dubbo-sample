@@ -11,6 +11,7 @@
         <module>springboot-dubbo-provide</module>
         <module>springboot-dubbo-consumer</module>
         <module>springboot-dubbo-api</module>
+        <module>zookeeper-sample</module>
     </modules>
     <packaging>pom</packaging>
 

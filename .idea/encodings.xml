@@ -10,5 +10,6 @@
     <file url="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-dubbo-provide/load-balance/load-balance-service3" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zookeeper-sample" charset="UTF-8" />
   </component>
 </project>

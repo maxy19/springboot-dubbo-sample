@@ -10,6 +10,7 @@
         <module name="springboot-dubbo-consumer" />
         <module name="load-balance-service3" />
         <module name="springboot-dubbo-api" />
+        <module name="zookeeper-sample" />
         <module name="dubbo-provide" />
         <module name="load-balance-service2" />
         <module name="load-balance-service1" />
@@ -25,6 +26,7 @@
       <module name="springboot-dubbo-consumer" target="1.8" />
       <module name="springboot-dubbo-provide" target="1.8" />
       <module name="think-for-springboot-dubbo-sample" target="1.8" />
+      <module name="zookeeper-sample" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -36,6 +38,7 @@
       <module name="springboot-dubbo-api" options="-parameters" />
       <module name="springboot-dubbo-consumer" options="-parameters" />
       <module name="springboot-dubbo-provide" options="" />
+      <module name="zookeeper-sample" options="-parameters" />
     </option>
   </component>
 </project>

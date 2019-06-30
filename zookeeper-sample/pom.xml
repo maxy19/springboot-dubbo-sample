@@ -12,7 +12,7 @@
     <artifactId>zookeeper-sample</artifactId>
     <packaging>war</packaging>
 
-    <name>zookeeper-sample Maven Webapp</name>
+    <name>zookeeper-sample</name>
     <dependencies>
         <!-- curator -->
         <dependency>

@@ -1,5 +1,7 @@
 package com.mxy.zk;
 
+import com.google.common.collect.Lists;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -7,10 +9,11 @@ import org.apache.curator.framework.recipes.cache.ChildData;
 import org.apache.curator.framework.recipes.cache.PathChildrenCache;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheEvent;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheListener;
+import org.apache.curator.framework.recipes.locks.InterProcessMultiLock;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.curator.utils.CloseableUtils;
 import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.ZooDefs;
+import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.data.Stat;
 
 import java.util.List;
@@ -20,6 +23,7 @@ public class ZkSample {
 
     private static CuratorFramework client = getClient();
     private static Stat stat;
+    private static InterProcessMultiLock interProcessMultiLock = null;
 
     public static CuratorFramework getClient() {
         //sleep 3秒 重试 3次
@@ -46,9 +50,9 @@ public class ZkSample {
     public static void create(String path, String data) throws Exception {
         // 创建节点
         client.create().creatingParentsIfNeeded() // 若创建节点的父节点不存在则先创建父节点再创建子节点
-              .withMode(CreateMode.PERSISTENT) // 创建的是持久节点
-              .withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE) // 默认匿名权限,权限scheme id:'world,'anyone,:cdrwa
-              .forPath(path, data.getBytes());
+                .withMode(CreateMode.PERSISTENT) // 创建的是持久节点
+                .withACL(Ids.OPEN_ACL_UNSAFE) // 默认匿名权限,权限scheme id:'world,'anyone,:cdrwa
+                .forPath(path, data.getBytes());
 
     }
 
@@ -65,8 +69,8 @@ public class ZkSample {
         // 读取节点数据
         Stat stat = new Stat(); // Stat就是对znode所有属性的一个映射，stat=null表示节点不存在
         log.info(new String(client.getData()
-                    .storingStatIn(stat) // 在获取节点内容的同时把状态信息存入Stat对象，如果不写的话只会读取节点数据
-                    .forPath(path)));
+                .storingStatIn(stat) // 在获取节点内容的同时把状态信息存入Stat对象，如果不写的话只会读取节点数据
+                .forPath(path)));
 
     }
 
@@ -76,6 +80,17 @@ public class ZkSample {
                 .withVersion(stat.getCversion()) // 乐观锁
                 .forPath(path, data.getBytes());
 
+    }
+
+    @SneakyThrows
+    public static void lock(String path,CuratorFramework client) {
+        interProcessMultiLock = new InterProcessMultiLock(client, Lists.newArrayList(path));
+        interProcessMultiLock.acquire();
+    }
+
+    @SneakyThrows
+    public static void unlock() {
+        interProcessMultiLock.release();
     }
 
     public static void watch(String path) throws Exception {

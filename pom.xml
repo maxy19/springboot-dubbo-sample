@@ -19,7 +19,7 @@
 
     <properties>
         <dubbo.starter.version>0.2.0</dubbo.starter.version>
-        <fastjson.version>1.2.57</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
 
     <parent>
